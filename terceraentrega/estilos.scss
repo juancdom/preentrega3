@@ -1,0 +1,241 @@
+/*
+{
+    margin: 0;
+    padding: 0;
+}*/
+
+*,
+*::before
+*::after
+{margin: 0;
+padding: 0;
+box-sizing: inherit;
+}
+
+$color-principal: white;
+$color-hover: rgb(216, 216, 8);
+$color-secundario: lightblue;
+
+body
+{   
+    min-height: calc(100vh - 100px - 100px);
+    box-sizing: border-box;
+    position: relative;
+    background-image: linear-gradient(rgb(175, 215, 228), rgb(255, 255, 255), rgb(175, 215, 228));
+    font-family: 'Delicious Handrawn'
+}
+
+.header
+{position: fixed;
+top: 0;
+left: 0;
+right: 0;
+background-color: rgba(0, 0, 0, 0.4);
+padding: 0px 10%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+z-index: 1000;
+}
+
+.logo
+{font-size: 25px;
+text-transform: uppercase;
+color: $color-principal;
+font-weight: 700;
+}
+
+
+.navigation ul
+{
+    list-style: none;
+}
+
+.header .navigation ul li
+{
+    float: left;
+    position: relative;
+}
+
+.header .navigation ul li a
+{
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    transition: all .2s ease;
+}
+.header .navigation ul li a:hover
+{
+    background-color: $color-hover;
+}
+.header .navigation ul li:hover > ul
+{
+    display: initial;
+}
+
+#toggle,
+.header label
+{
+    display: none;
+    cursor: pointer;
+}
+.menu
+{
+   width: 45px;
+   height: 35px;
+}
+@media(max-width:950px) 
+{
+    .header label
+    {
+        display: initial;
+    }
+    .header
+    {
+        padding: 20px 10%;
+    }
+    .header .navigation
+    {
+        position: absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: none;
+    }
+    .header .navigation ul li
+    {
+        width: 100%;
+    }
+    .header .navigation ul li a
+    {
+        padding: 8px 30px 8px 10%;
+    }
+    #toggle:checked ~ .navigation
+    {
+        display: block;
+    }
+    .contacto
+    {
+        max-width: 100%;
+    }
+}
+.home
+{
+    display: flex;
+    margin-top: 68px;
+    flex-wrap: wrap;
+}
+.in-flex
+{
+    flex: 1;
+    padding: 25px;
+    min-width: 250px;
+    font-size: 20px;
+}
+
+.in-flex:first-child
+{
+    flex:2;
+    margin: 20px;
+    margin-bottom: 0px;
+}
+
+.in-flex div
+{
+    padding: 25px;
+    margin: 20px;
+}
+footer
+{
+    background-color: rgba(120, 120, 120, .5);
+    line-height: 3;
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    bottom: 0;
+    left:0;
+    flex-direction: column;
+    font-size: 20px;
+    
+}
+
+form
+{
+    width: 450px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+    margin-top: 86px;
+}
+
+h2
+{
+    color: $color-principal;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+    animation-name: animar;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+@keyframes animar
+{
+    0%
+    {
+        transform: scale(.3);
+        color:$color-principal;
+        border-radius: 100%;
+    }
+    50%
+    {
+        color:$color-principal;
+    }
+    100%
+    {
+        transform: scale(1.5);
+        color: $color-secundario;
+    }
+}
+
+.contacto, textarea , .boton-contacto
+{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: none;
+}
+
+textarea
+{
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+.boton-contacto
+{
+    background-color: rgb(101, 148, 148);
+    color: $color-principal;
+    padding: 20px;
+}
+#boton:hover
+{
+    cursor: pointer;
+    background-color: $color-hover;
+}

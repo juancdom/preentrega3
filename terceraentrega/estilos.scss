@@ -239,3 +239,18 @@ textarea
     cursor: pointer;
     background-color: $color-hover;
 }
+.grid-item
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+    border-radius: 4px;
+    transition: transform 0.3s ease-in-out;
+    border: solid 1px rgb(255, 255, 255);
+}
+.grid-item:hover
+{
+    filter: opacity(0.9);
+    transform: scale(1.04);
+}

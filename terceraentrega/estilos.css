@@ -14,8 +14,11 @@ body {
   min-height: calc(100vh - 100px - 100px);
   box-sizing: border-box;
   position: relative;
-  background-image: linear-gradient(rgb(175, 215, 228), rgb(255, 255, 255), rgb(175, 215, 228));
   font-family: "Delicious Handrawn";
+  background-image:url(./imagenes/fondo.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  
 }
 
 .header {
@@ -107,6 +110,44 @@ body {
   display: flex;
   margin-top: 68px;
   flex-wrap: wrap;
+ 
+}
+.slider
+{
+  width: 100%;
+  margin: auto;
+  height: 700px;
+  overflow: hidden;
+  margin-top: 80px;
+}
+.lista-carrusel
+{
+  padding: 0;
+  display: flex;
+  width: 400%;
+  animation: slider 20s infinite alternate;
+  animation-timing-function: linear;
+}
+@keyframes slider
+{
+  0%{margin-left: 0%;}
+  20%{margin-left: 0%;}
+  25%{margin-left: -100%;}
+  45%{margin-left: -100%;}
+  50%{margin-left: -200%;}
+  70%{margin-left: -200%;}
+  75%{margin-left: -300%;}
+  100%{margin-left: -300%;}
+}
+
+.img-carrusel
+{
+  width: 100%;
+  list-style: none;
+}
+.fotos-carrusel
+{
+  width: 100%;
 }
 
 .in-flex {
@@ -114,6 +155,7 @@ body {
   padding: 25px;
   min-width: 250px;
   font-size: 20px;
+  margin-top: 10px;
 }
 
 .in-flex:first-child {
@@ -319,6 +361,7 @@ textarea {
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
   cursor: default;
   transition: all 400ms ease;
+  
 }
 .card:hover
 {
@@ -329,6 +372,12 @@ textarea {
 {
   width: 100%;
   height: 210px;
+  min-height: 200px;
+  max-height: 200px;
+  max-width: 1100px;
+  min-width: 80px;
+  margin: auto;
+  
 }
 .card .contenido
 {
